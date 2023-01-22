@@ -7,10 +7,10 @@ import (
 )
 
 func InitClient() {
-	fileServer := http.FileServer(http.Dir("./client/static"))
+	fileServer := http.FileServer(http.Dir("./frontend/static"))
 	http.Handle("/", fileServer)
 
-	fmt.Printf("Starting server at port 8082\n")
+	fmt.Printf("Starting backend at port 8082...\n")
 	if err := http.ListenAndServe(":8082", nil); err != nil {
 		log.Fatal(err)
 	}

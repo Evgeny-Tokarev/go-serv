@@ -11,9 +11,8 @@ function submitHandler(event) {
   xhr.setRequestHeader("Content-Type", "application/json")
 
   xhr.onreadystatechange = function () {
-    //Call a function when the state changes.
     if (xhr.readyState == 4 && xhr.status == 200) {
-      console.log(xhr.responseText)
+      console.log("Successfully: ", xhr.responseText)
     }
   }
   xhr.send(JSON.stringify(params))
