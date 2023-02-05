@@ -1,1 +1,1 @@
-export {addNewAlbum, getAlbumByTitle} from "./albumsHandler"
+export {addNewAlbum, getAlbumInfoByTitle} from "./albumsHandler"

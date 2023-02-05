@@ -1,5 +1,6 @@
 <template>
   <div class="album-form">
+    <h2>Update Album</h2>
     <v-form
       class="album-form__form"
       ref="form"
@@ -80,7 +81,6 @@ const sendAlbum = async () => {
       form.value?.reset();
     }
   }
-
 };
 const validate = async () => {
   if (form.value) {

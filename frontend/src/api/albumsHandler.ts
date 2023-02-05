@@ -19,11 +19,11 @@ export const addNewAlbum = async (form: Album) => {
     };
   }
 };
-export const getAlbumByTitle = async (title: string) => {
+export const getAlbumInfoByTitle = async (title: string) => {
   try {
-    const resp = await axios.get(`/album?title=${title}`);
+    const resp = await axios.get(`/albums/${title}`);
     return {
-      data: resp.data.album,
+      data: resp.data,
       status: resp.status,
     };
   } catch (error: any) {
