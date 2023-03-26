@@ -1,0 +1,23 @@
+{
+  "menu": {
+    "account": "Account",
+    "myResume": "My resumes"
+  },
+  "mainPage": {
+    "title": "CV constructor"
+  },
+  "login": {
+    "title": "Enter user name and password",
+    "name": "Name",
+    "password": "Password",
+    "enter": "enter",
+    "message": {
+      "fail": "Wrong name or password"
+    }
+  },
+  "account": {
+    "created": "Was created",
+    "cvs": "List of CV",
+    "save": "Save changes"
+  }
+}

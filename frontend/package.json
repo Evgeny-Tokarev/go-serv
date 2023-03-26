@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host --port 8080",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",
@@ -15,14 +15,17 @@
     "axios": "^1.2.3",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.1.6",
     "vuetify": "^3.1.2"
   },
   "devDependencies": {
+    "@intlify/vite-plugin-vue-i18n": "^7.0.0",
     "@rah-emil/vite-plugin-vue-type-imports": "^0.2.5",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.12",
+    "@types/vue-i18n": "^7.0.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",

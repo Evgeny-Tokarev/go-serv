@@ -1,38 +1,37 @@
-import { createRouter, createWebHistory } from "vue-router";
-import UpdateAlbum from "@/views/UpdateAlbum.vue";
-import AddAlbum from "@/views/AddAlbum.vue";
-import AlbumInfo from "@/views/AlbumInfo.vue";
+import {createRouter, createWebHistory} from "vue-router";
 import HomeView from "@/views/HomeView.vue";
+import LoginPage from "@/views/LoginPage.vue";
+import {useUserStore} from "@/stores"
+import UserAccount from "@/views/UserAccount.vue"
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: "/",
-      name: "home",
-      component: HomeView,
-    },
-    {
-      path: "/albums",
-      children: [
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes: [
         {
-          path: "add",
-          name: "addAlbum",
-          component: AddAlbum,
+            path: "/",
+            name: "home",
+            component: HomeView,
         },
         {
-          path: "info",
-          name: "albumInfo",
-          component: AlbumInfo,
+            path: "/login",
+            name: "Login",
+            component: LoginPage
         },
         {
-          path: "update",
-          name: "updateAlbum",
-          component: UpdateAlbum,
-        },
-      ],
-    },
-  ],
+            path: "/account",
+            name: "Account",
+            component: UserAccount
+        }
+    ],
 });
+router.beforeEach(async (to, from) => {
+    const store = useUserStore()
+    if (
+        !store.currentUser &&
+        to.name !== 'Login'
+    ) {
+        return {name: 'Login'}
+    }
+})
 
 export default router;

@@ -9,7 +9,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "DOM"],
-    "types": [ "vite/client"],
+    "types": [ "vite/client", "@intlify/vite-plugin-vue-i18n/client"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
